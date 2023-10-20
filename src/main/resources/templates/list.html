@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <!--    <meta charset="UTF-8">-->
+    <title>Model List</title>
+</head>
+<style>
+/* Reset default margin and padding */
+body, h1, table, th, td {
+    margin: 0;
+    padding: 0;
+}
+
+/* Set a background color and text color for the entire page */
+body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+/* Style the container */
+.container {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+}
+
+/* Style the h1 heading */
+h1 {
+    color: #333;
+}
+
+/* Style the table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style the table headers */
+th {
+    background-color: #333;
+    color: #fff;
+    font-weight: bold;
+    padding: 10px;
+}
+
+/* Style the table rows */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the table data cells */
+td {
+    padding: 10px;
+}
+
+/* Style the update and delete buttons */
+a.btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Remove bottom border from the last cell in each row */
+td.border-bottom-0 {
+    border-bottom: 0;
+}
+
+/* Add some padding to the bottom of the container */
+.container {
+    margin-bottom: 20px;
+}
+</style>
+<body>
+<h1>List</h1>
+<table>
+    <tr>
+        <th>Cab no</th>
+        <th>PickUp Address</th>
+        <th>Drop Address</th>
+        <th>Name</th>
+        <th>Contact Number</th>
+        <th>Time</th>
+
+    </tr>
+    <tr th:each="officeCabLists : ${officeCabList}">
+        <td th:text="${officeCabLists.cabNumber}"></td>
+        <td th:text="${officeCabLists.pickupAddress}"></td>
+        <td th:text="${officeCabLists.dropAddress}"></td>
+        <td th:text="${officeCabLists.name}"></td>
+        <td th:text="${officeCabLists.contactNumber}"></td>
+
+        <td th:text="${officeCabLists.time}"></td>
+
+
+
+
+    </tr>
+</table>
+</body>
+</html>
